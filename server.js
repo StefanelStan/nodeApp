@@ -61,6 +61,14 @@ app.get('/about', (request, response) => {
 	});
 });
 
+app.get('/portfolio', (request, response) => {
+	//response.send('<h2>About page </h2>');
+	response.render('portfolio.hbs', {
+		pageTitle : 'Portfolio Page',
+		currentYear: new Date()
+	});
+});
+
 app.get('/bad', (request, response) => {
 	response.status(400)
 			.send({error: 'Unable to fulfill request'});
